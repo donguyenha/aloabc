@@ -13,6 +13,9 @@
 Route::resource('category', 'CategoryController', [
     'only' => ['index', 'show', 'create', 'store']
 ]);
+Route::resource('links', 'LinksController', [
+    'only' => ['index', 'show', 'create', 'store']
+]);
 
 Route::get('/', function () {
     return view('welcome');
