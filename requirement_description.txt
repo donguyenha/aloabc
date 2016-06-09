@@ -1,0 +1,13 @@
+Film:
+    Ten tieng viet
+    ten tieng anh
+mo ta
+nam san xuat
+nuoc san xuat
+the loai
+thoi gian film
+dao dien
+dien vien
+trailer
+tu khoa
+so tap

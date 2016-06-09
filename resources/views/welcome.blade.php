@@ -5,20 +5,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>ALO film</title>
 <link rel="stylesheet" href="{{ asset("assets/plugins/bootstrap/dist/css/bootstrap.min.css") }}">
-<link rel="stylesheet" href="{{ asset("assets/plugins/custom-scrollbar-plugin/jquery.mCustomScrollbar.css") }}">
-<link rel="stylesheet" href="{{ asset("assets/plugins/tooltipster-master/css/tooltipster.css") }}">
-<link rel="stylesheet" href="{{ asset("assets/plugins/jquery-cluetip-master/jquery.cluetip.css") }}">
-<link rel="stylesheet" href="{{ asset("assets/plugins/font-awesome/css/font-awesome.min.css") }}">
-<link rel="stylesheet" href="{{ asset("assets/plugins/slick/slick.css") }}">
-<link rel="stylesheet" href="{{ asset("assets/plugins/slick/slick-theme.css") }}">
-<link rel="stylesheet" href="{{ asset("assets/plugins/videojs/dist/video-js.min.css") }}">
 <link rel="stylesheet" href="{{ asset("assets/css/style.css") }}">
 <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
 <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
 <!--[if lt IE 9]>
     <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.min.js"></script>
     <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-<![endif]-->    <body>
+<![endif]-->
+<body>
         <div class="wrapper">
             <header>
                 <div class="container-fluid">
@@ -2594,11 +2588,6 @@
             <script src="{{ asset("assets/js/jquery.min.js")}}"></script>
             <script src="{{ asset("assets/js/jquery-migrate-1.2.1.min.js") }}"></script>
             <script src="{{ asset("assets/plugins/bootstrap/dist/js/bootstrap.min.js") }}"></script>
-            <script src="{{ asset("assets/plugins/tooltipster-master/js/jquery.tooltipster.js") }}"></script>
-            <script src="{{ asset("assets/plugins/jquery-cluetip-master/lib/jquery.hoverIntent.js") }}"></script>
-            <script src="{{ asset("assets/plugins/jquery-cluetip-master/jquery.cluetip.min.js") }}"></script>
-            <script src="{{ asset("assets/plugins/slick/slick.min.js") }}"></script>
-            <script src="{{ asset("assets/plugins/custom-scrollbar-plugin/jquery.mCustomScrollbar.js") }}"></script>
             <script src="{{ asset("assets/js/main.js") }}"></script>
         </div>
     </body>
