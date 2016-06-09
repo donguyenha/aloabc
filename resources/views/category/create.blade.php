@@ -1,7 +1,7 @@
 @extends('main')
 
 @section('content')
-    <div  class="col-md-8 col-md-offset-2">
+    <div class="col-md-8 col-md-offset-2">
         <form action="{{ route('category.store') }}" method="post">
             {{ csrf_field() }}
           <div class="form-group">
@@ -10,6 +10,5 @@
           </div>
           <button type="submit" class="btn btn-primary">Submit</button>
         </form>
-
     </div>
 @endsection

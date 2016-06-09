@@ -10,7 +10,9 @@
 | and give it the controller to call when that URI is requested.
 |
 */
-Route::resource('category', 'CategoryController');
+Route::resource('category', 'CategoryController', [
+    'only' => ['index', 'show', 'create', 'store']
+]);
 
 Route::get('/', function () {
     return view('welcome');
