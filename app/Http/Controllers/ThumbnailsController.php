@@ -45,14 +45,14 @@ class ThumbnailsController extends Controller
 
         return Thumbnail::firstOrCreate(['link'     => request()->link,
                                         'profile'   => request()->profile,
-                                        'film_id'   => request()->film_idw
-                                        ])
+                                        'film_id'   => request()->film_id]);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
+
      * @return \Illuminate\Http\Response
      */
     public function show($id)
