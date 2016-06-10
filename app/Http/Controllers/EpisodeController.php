@@ -6,9 +6,7 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Link;
-
-class LinksController extends Controller
+class EpisodeController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +15,7 @@ class LinksController extends Controller
      */
     public function index()
     {
-        return Link::all();
+        //
     }
 
     /**
@@ -27,7 +25,7 @@ class LinksController extends Controller
      */
     public function create()
     {
-        return view('links.create');
+        //
     }
 
     /**
@@ -38,12 +36,7 @@ class LinksController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'profile' => 'required|in:144,244,360,480,720',
-            'link' => 'required',
-        ]);
-        return Link::firstOrCreate(['link' => request()->link,
-                                    'profile' => request()->profile]);
+        //
     }
 
     /**
@@ -54,7 +47,7 @@ class LinksController extends Controller
      */
     public function show($id)
     {
-        return Link::findOrFail($id);
+        //
     }
 
     /**

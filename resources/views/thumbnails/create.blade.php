@@ -6,16 +6,14 @@
             {{ csrf_field() }}
             <div class="form-group">
                 <label for="name">Link Thumbnail</label>
-                <input type="text" class="form-control" name="link" placeholder="Please enter Thumbnail link">
+                <input type="text" class="form-control" name="link" placeholder="Please enter Link Thumbnail">
             </div>
             <div class="form-group">
                 <label for="profile">Profile</label>
-                <select class="form-control">
-                    <option value="144">144</option>
-                    <option value="244">244</option>
-                    <option value="360">360</option>
-                    <option value="480">480</option>
-                    <option value="720">720</option>
+                <select name="profile" class="form-control">
+                    <option value="small">Small</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large</option>
                 </select>
             </div>
             <div class="form-group">

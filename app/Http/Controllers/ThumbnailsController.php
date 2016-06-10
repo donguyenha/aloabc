@@ -37,7 +37,16 @@ class ThumbnailsController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'link' => 'required',
+            'profile' => 'required|in:small,medium,large',
+            'film_id' => 'required',
+        ]);
+
+        return Thumbnail::firstOrCreate(['link'     => request()->link,
+                                        'profile'   => request()->profile,
+                                        'film_id'   => request()->film_idw
+                                        ])
     }
 
     /**
