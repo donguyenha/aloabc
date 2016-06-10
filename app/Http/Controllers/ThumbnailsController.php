@@ -26,7 +26,7 @@ class ThumbnailsController extends Controller
      */
     public function create()
     {
-        //
+        return view('thumbnails.create');
     }
 
     /**

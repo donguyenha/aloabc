@@ -2,10 +2,10 @@
 
 @section('content')
     <div class="col-md-8 col-md-offset-2">
-        <form action="{{ route('links.store') }}" method="post">
+        <form action="{{ route('thumbnails.store') }}" method="post">
             {{ csrf_field() }}
             <div class="form-group">
-                <label for="name">Link Film</label>
+                <label for="name">Link Thumbnail</label>
                 <input type="text" class="form-control" name="link" placeholder="Please enter Thumbnail link">
             </div>
             <div class="form-group">

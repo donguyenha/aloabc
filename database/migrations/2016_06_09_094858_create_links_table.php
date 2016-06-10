@@ -14,11 +14,9 @@ class CreateLinksTable extends Migration
     {
         Schema::create('links', function (Blueprint $table) {
             $table->increments('id')->nullable();
-            $table->string('link_144')->nullable();
-            $table->string('link_240')->nullable();
-            $table->string('link_360')->nullable();
-            $table->string('link_480')->nullable();
-            $table->string('link_720')->nullable();
+            $table->string('link');
+            $table->string('profile');
+            $table->integer('film_id');
             $table->timestamps();
         });
     }

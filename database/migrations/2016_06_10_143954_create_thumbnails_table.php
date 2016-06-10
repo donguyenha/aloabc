@@ -14,9 +14,9 @@ class CreateThumbnailsTable extends Migration
     {
         Schema::create('thumbnails', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('small');
-            $table->string('medium');
-            $table->string('large');
+            $table->string('link');
+            $table->string('profile');
+            $table->integer('film_id');
             $table->timestamps();
         });
     }
