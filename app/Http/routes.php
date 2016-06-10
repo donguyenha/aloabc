@@ -16,6 +16,9 @@ Route::resource('category', 'CategoryController', [
 Route::resource('links', 'LinksController', [
     'only' => ['index', 'show', 'create', 'store']
 ]);
+Route::resource('thumbnails', 'ThumbnailsController', [
+    'only' => ['index', 'show', 'create', 'store']
+]);
 
 Route::get('/', function () {
     return view('welcome');

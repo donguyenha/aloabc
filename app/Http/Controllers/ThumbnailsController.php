@@ -6,9 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Link;
-
-class LinksController extends Controller
+use App\Thumbnail;
+class ThumbnailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -17,7 +16,7 @@ class LinksController extends Controller
      */
     public function index()
     {
-        return Link::all();
+        return Thumbnail::all();
     }
 
     /**
@@ -27,7 +26,7 @@ class LinksController extends Controller
      */
     public function create()
     {
-        return view('links.create');
+        //
     }
 
     /**
@@ -38,11 +37,7 @@ class LinksController extends Controller
      */
     public function store(Request $request)
     {
-        $this->validate($request, [
-            'col' => 'required|in:link_144,link_244,link_360,link_480,link_720',
-            'value' => 'required',
-        ]);
-        dd($request);
+        //
     }
 
     /**
@@ -53,7 +48,7 @@ class LinksController extends Controller
      */
     public function show($id)
     {
-        return Link::findOrFail($id);
+        //
     }
 
     /**
