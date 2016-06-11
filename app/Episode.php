@@ -6,6 +6,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Episode extends Model
 {
+    protected $fillable = ['film_id', 'episode_no'];
     public function links()
     {
         return $this->hasMany('App\Link');
