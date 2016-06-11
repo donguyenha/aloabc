@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Thumbnail;
-class ThumbnailsController extends Controller
+use App\Directory;
+
+class DirectorsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -16,7 +17,7 @@ class ThumbnailsController extends Controller
      */
     public function index()
     {
-        return Thumbnail::all();
+        return Director::all();
     }
 
     /**
@@ -26,7 +27,7 @@ class ThumbnailsController extends Controller
      */
     public function create()
     {
-        return view('thumbnails.create');
+        return view('directors.create');
     }
 
     /**
@@ -38,26 +39,21 @@ class ThumbnailsController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'link' => 'required',
-            'profile' => 'required|in:small,medium,large',
-            'film_id' => 'required',
+            'name' => 'required',
         ]);
 
-        return Thumbnail::firstOrCreate(['link'     => request()->link,
-                                        'profile'   => request()->profile,
-                                        'film_id'   => request()->film_id]);
+        return Director::firstOrCreate(['name' => request()->name]);
     }
 
     /**
      * Display the specified resource.
      *
      * @param  int  $id
-
      * @return \Illuminate\Http\Response
      */
     public function show($id)
     {
-        //
+        return Director::findOrFail($id);
     }
 
     /**

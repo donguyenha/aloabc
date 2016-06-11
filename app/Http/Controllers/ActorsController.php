@@ -6,11 +6,9 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
-use App\Link;
+use App\Actor;
 
-use App\Episode;
-
-class LinksController extends Controller
+class ActorsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,7 +17,7 @@ class LinksController extends Controller
      */
     public function index()
     {
-        return Link::all();
+        return Actor::all();
     }
 
     /**
@@ -29,12 +27,7 @@ class LinksController extends Controller
      */
     public function create()
     {
-        $profiles = [144, 244, 360, 480, 720];
-        /*
-         *  should be check again the episode_id and title film
-         */
-        $episodes = Episode::all();
-        return view('links.create', ['profiles' => $profiles, 'episodes' => $episodes]);
+        return view('actors.create');
     }
 
     /**
@@ -46,13 +39,10 @@ class LinksController extends Controller
     public function store(Request $request)
     {
         $this->validate($request, [
-            'profile' => 'required|in:144,244,360,480,720',
-            'link' => 'required',
-            'episode_id' => 'required',
+            'name' => 'required',
         ]);
-        return Link::firstOrCreate(['link' => request()->link,
-                                    'episode_id' => request()->episode_id,
-                                    'profile' => request()->profile]);
+
+        return Actor::firstOrCreate(['name' => request()->name]);
     }
 
     /**
@@ -63,7 +53,7 @@ class LinksController extends Controller
      */
     public function show($id)
     {
-        return Link::findOrFail($id);
+        return Actor::findOrFail($id);
     }
 
     /**

@@ -15,8 +15,7 @@ class CreateEpisodesTable extends Migration
         Schema::create('episodes', function (Blueprint $table) {
             $table->increments('id');
             $table->integer('film_id');
-            $table->integer('no_eps');
-            $table->integer('link_id');
+            $table->integer('episode_no');
             $table->timestamps();
         });
     }

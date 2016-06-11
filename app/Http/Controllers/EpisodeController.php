@@ -6,6 +6,10 @@ use Illuminate\Http\Request;
 
 use App\Http\Requests;
 
+use App\Episode;
+
+use App\Film;
+
 class EpisodeController extends Controller
 {
     /**
@@ -15,7 +19,7 @@ class EpisodeController extends Controller
      */
     public function index()
     {
-        //
+        return Episode::all();
     }
 
     /**
@@ -25,7 +29,11 @@ class EpisodeController extends Controller
      */
     public function create()
     {
-        //
+        /*
+         * should limit film to 10 and orderby DESC created_at
+         */
+        $films = Film::all();
+        return view('episodes.create', ['films' => $films]);
     }
 
     /**
@@ -36,7 +44,13 @@ class EpisodeController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $this->validate($request, [
+            'episode_no' => 'required',
+            'film_id' => 'required',
+        ]);
+
+        return Episode::firstOrCreate(['film_id' => request()->film_id,
+                                    'episode_no' => request()->episode_no]);
     }
 
     /**

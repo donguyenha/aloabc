@@ -16,7 +16,13 @@ Route::resource('category', 'CategoryController', [
 Route::resource('links', 'LinksController', [
     'only' => ['index', 'show', 'create', 'store']
 ]);
-Route::resource('thumbnails', 'ThumbnailsController', [
+Route::resource('episodes', 'EpisodeController', [
+    'only' => ['index', 'show', 'create', 'store']
+]);
+Route::resource('directors', 'DirectorsController', [
+    'only' => ['index', 'show', 'create', 'store']
+]);
+Route::resource('actors', 'ActorsController', [
     'only' => ['index', 'show', 'create', 'store']
 ]);
 

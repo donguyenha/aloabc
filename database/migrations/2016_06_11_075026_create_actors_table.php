@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateThumbnailsTable extends Migration
+class CreateActorsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -12,11 +12,9 @@ class CreateThumbnailsTable extends Migration
      */
     public function up()
     {
-        Schema::create('thumbnails', function (Blueprint $table) {
+        Schema::create('actors', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('link')->unique();
-            $table->string('profile');
-            $table->integer('film_id');
+            $table->string('name');
             $table->timestamps();
         });
     }
@@ -28,6 +26,6 @@ class CreateThumbnailsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('thumbnails');
+        Schema::drop('actors');
     }
 }

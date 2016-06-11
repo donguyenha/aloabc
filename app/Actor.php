@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Thumbnail extends Model
+class Actor extends Model
 {
-    //
+    protected $fillable = ['name'];
 }
