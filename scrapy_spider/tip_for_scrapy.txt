@@ -1,0 +1,95 @@
+Scrapy is an awesome Open Source tool to scrapy pages using Python. Why it's so awesome ? First, because its interface is easy and clean to use xpath, css-queries and build HTTP response callbacks.
+In Scrapy there is a pattern to organize a crawler project. You model what you are scrapying as objects and define task pipelines to handle those objects automatically. Finally, you can also deploy your project into Scraping hub, a cloud solution to crawl million of pages.
+In this post, I would to share some simple but useful things I've learned working with real Scrapy projects.
+Crawling dynamic pages: Splash + Scrapyjs => S2
+Splash is a lightweight headless browser that works as an HTTP API. Guess what, it's also Open Source. With Splash, you can easily render Javascript pages and then scrapy them!
+
+There's a great and detailed tutorial about integrating Splash and ScrapyJs at Scrapinghub blog. After configuring everything, you can trigger the following requests:
+
+def parse_locations(self, response):
+    yield Request(url, callback=self.parse_response, meta={
+            'splash': {
+                                  'endpoint': 'render.html',
+                                  'args': {'wait': 0.5}
+            }
+            })
+Adding splash directive makes the script to call Splash, through render.html API and execute all Javascript of the crawled page.
+
+Organizing your callbacks
+Let's suppose our crawler has to deal with 3 tasks:
+
+Make a search
+Click on each item result
+Get item data
+With Scrapy, we can organize our spider to perform these tasks in each callback. So, for the first callback you have something like this:
+
+1. class TripAdvisorSpider(CrawlSpider):
+2.     name = 'my_crawler'
+3.     start_urls = ['http://www.my_site.com/search?q=boxing+gloves']
+4.
+5.     def parse(self, response):
+6.         sel = Selector(response)
+7.         last_page = int(sel.xpath('//a[contains(@class,"last_page")]//text()').extract())
+8.
+9.         for i in range(last_page):
+10.             url = start_urls[0] + "&page=" + str(i * 30)
+11.             yield Request(url, self.parse_results)
+This is the initial spider callback. After invoking start url (line 3), Scrapy executes parse method having as parameter an HTTP response (the search result). Using xpath queries (lines 6-7), we get last page number, which means we known how many page results exist.
+
+For each page result (lines 9-11), we make an HTTP request and parse its response (search result items) by calling our next callback: self.parse_results():
+
+12.     def parse_results(self, response):
+13.         sel = Selector(response)
+14.         urls = sel.xpath('//div[contains(@class, "items_list")]//a/@href')
+15.
+16.         for url in urls:
+17.             yield Request(url.extract(), callback=self.parse_product, meta={
+18.                             'splash': {
+19.                                 'endpoint': 'render.html',
+20.                                 'args': {'wait': 0.5}
+                                },
+21.                             'url': url.extract()
+22.
+                            })
+Here, our start page is the page result. In lines 13-14, we get all links (href content) of a div with . item_list class. Each link is a search result and we extracted all of them. Then, for each item result link (lines 16-21), we make a new HTTP request and parse each response with a new callback: self.parse_product().
+
+We are using Splash in this request because the product page has dynamic content. Also, we pass an 'url' parameter to our callback. Splash is a middleware, when you call it, the requested url is the Splash url not the original one anymore. So, we keep the original url in this parameter. It's very common in crawler systems to store original crawled urls to crawl them again latter.
+
+This last callback will take our spider to the result item page, which in our case is a boxing glove related product:
+
+23.     def parse_product(self, response):
+24.         sel = Selector(response)
+25.         product = Product()
+26.
+27.         product["name"] = str(sel.xpath("//h1/text()").extract()[0])
+28.         product["description"] = str(sel.xpath('//span[@id="desc"]//text()').extract())
+29.         product["price"] = sel.xpath('//i[@class="price"]')]/text()').extract()[0]
+30.         product["url"] = response.meta["url"]
+31.         product["updated_at"] = date.today().isoformat()
+32.
+33.         return product
+In this last callback, we first instantiate a Product object (line 25) that I've created before. Then (lines 27-29), through xpath, we extract and fill product name, description and price. We also set the product url and an updated_at attribute (lines 30-31). This is useful if you need to scrapy it more times.
+
+Storage pipeline
+One of the great features of Scrapy is pipelines. They let you to set up Scrapy to automatic execute tasks after crawling an item. In the example below, we're going to create a pipeline task to store each crawled product into MongoDB:
+
+class MongoPipeline(object):
+    def __init__(self):
+        db = pymongo.MongoClient("localhost", 27017).crawlers
+        self._products = db.products
+
+    def process_item(self, item, spider):
+        d_item = dict(item)
+
+        if (not self._products.find_one(d_item)):
+            self._products.save(d_item)
+
+        return item
+The code is very simple, in the constructor we first set up a client to our MongoDB database and named it crawlers. Then, we define a collection called products to keep what we crawled. To create any pipeline task, you have to implement the method process_item (self, item, spider).
+Here, we first convert an item to a dictionary data structure. Then, we verify (by identity) if this item is already in our database. If not, we saved it! Finally, we return item object since it may be submitted to other pipeline tasks. We also have to include into our settings.py file the new pipeline:
+
+ITEM_PIPELINES = ['my_crawler.pipelines.MongoPipeline']
+
+Now all items returned by our spider are automatically handled by this pipeline. In my opinion, MongoDB is a good fit. Spiders may fail sometimes due network issues, security policies, or bad HTML. So, we may not have always all product attributes. Document-oriented database are good for sparse data.
+I came up with what I think is very useful when building a scrapy project. So, if you need to scrapy dynamic pages remember of using Splash. If your spider has to crawl nested pages, try to keep your callback organized. Finally, if you need to store or do anything else with what you scraped, use pipelines =]
+This is it! In my github I have a small project called Jobful that shows how to use the MongoPipeline I showed. Feel free to use it!
