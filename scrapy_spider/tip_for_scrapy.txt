@@ -52,9 +52,7 @@ For each page result (lines 9-11), we make an HTTP request and parse its respons
 22.
                             })
 Here, our start page is the page result. In lines 13-14, we get all links (href content) of a div with . item_list class. Each link is a search result and we extracted all of them. Then, for each item result link (lines 16-21), we make a new HTTP request and parse each response with a new callback: self.parse_product().
-
 We are using Splash in this request because the product page has dynamic content. Also, we pass an 'url' parameter to our callback. Splash is a middleware, when you call it, the requested url is the Splash url not the original one anymore. So, we keep the original url in this parameter. It's very common in crawler systems to store original crawled urls to crawl them again latter.
-
 This last callback will take our spider to the result item page, which in our case is a boxing glove related product:
 
 23.     def parse_product(self, response):
