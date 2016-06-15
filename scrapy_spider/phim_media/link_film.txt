@@ -1,0 +1,16 @@
+<video class="video-js vjs-default-skin" controls="" data-setup="{}" id="phim-media" poster="http://www.phim.media/upload/images/phim/phim/rush-hour-1-1998.jpg" preload="auto" width="100%">
+ <source data-res="SD" src="https://lh3.googleusercontent.com/cTBOi0ev1O464tU8Oxa-pe4keg9mLIXhkB2ZGTdRAoLJ5oSZUWHslHo1nBPa39RozcEAIIt6ymc=m18?itag=18&amp;type=video/mp4" type="video/mp4">
+ </source>
+ <source data-res="SD" src="https://3.bp.blogspot.com/cTBOi0ev1O464tU8Oxa-pe4keg9mLIXhkB2ZGTdRAoLJ5oSZUWHslHo1nBPa39RozcEAIIt6ymc=m18?itag=18&amp;type=video/mp4" type="video/mp4">
+ </source>
+ <source data-res="HD" src="https://lh3.googleusercontent.com/cTBOi0ev1O464tU8Oxa-pe4keg9mLIXhkB2ZGTdRAoLJ5oSZUWHslHo1nBPa39RozcEAIIt6ymc=m22?itag=22&amp;type=video/mp4" type="video/mp4">
+ </source>
+ <source data-res="HD" src="https://3.bp.blogspot.com/cTBOi0ev1O464tU8Oxa-pe4keg9mLIXhkB2ZGTdRAoLJ5oSZUWHslHo1nBPa39RozcEAIIt6ymc=m22?itag=22&amp;type=video/mp4" type="video/mp4">
+ </source>
+ <p class="vjs-no-js">
+  To view this video please enable JavaScript, and consider upgrading to a web browser that
+  <a href="http://www.phim.media/" target="_blank">
+   supports HTML5 video
+  </a>
+ </p>
+</video>

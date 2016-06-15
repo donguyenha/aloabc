@@ -1,0 +1,26 @@
+<div class="inner">
+ <a href="http://www.phim.media/phim-dap-an-hoan-hao/" title="Đáp Án Hoàn Hảo">
+  <img alt="Đáp Án Hoàn Hảo" src="http://www.phim.media/temp/upload/images/phim/phim/gantz-perfect-answer-part-2-2011.jpg" width="300"/>
+ </a>
+ <div class="info">
+  <div class="name">
+   <a href="http://www.phim.media/phim-dap-an-hoan-hao/" title="Đáp Án Hoàn Hảo">
+    Đáp Án Hoàn Hảo
+   </a>
+   2011
+  </div>
+  <div class="name2">
+   Gantz Perfect Answer Part 2
+  </div>
+  <div class="stats">
+  </div>
+ </div>
+ <div class="status">
+  Phụ Đề
+ </div>
+ <div class="speaker" title="Phim có thuyết minh">
+ </div>
+ <div class="HD">
+  Bản Đẹp
+ </div>
+</div>

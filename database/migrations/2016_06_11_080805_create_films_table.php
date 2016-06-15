@@ -26,6 +26,7 @@ class CreateFilmsTable extends Migration
             $table->string('country')->nullable();
             $table->integer('type')->nullable();
             $table->string('crawler_at')->unique();
+            $table->integer('status')->default(1);
             $table->timestamps();
         });
     }

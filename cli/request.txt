@@ -1,6 +1,6 @@
 * About to connect() to proxy proxy.hcm.fpt.vn port 80 (#0)
-*   Trying 172.30.45.224...
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
+*   Trying 172.30.45.223...
+* Connected to proxy.hcm.fpt.vn (172.30.45.223) port 80 (#0)
 > GET http://hdonline.vn/ HTTP/1.1
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
 Host: hdonline.vn
@@ -16,35 +16,35 @@ X-Requested-With: XMLHttpRequest
 Keep-Alive: 300
 
 < HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 07:59:40 GMT
+< Date: Tue, 14 Jun 2016 10:42:10 GMT
 < Content-Type: text/html
 < Transfer-Encoding: chunked
 < X-Powered-By: PHP/5.3.14
 < Access-Control-Allow-Origin: *
 < Access-Control-Allow-Methods: GET
-* Added cookie PHPSESSID="buluidjp770qf817i5hvm6bu43" for domain hdonline.vn, path /, expire 0
-< Set-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; path=/
+* Added cookie PHPSESSID="7t6ir5o7gsul7or45kd8eb7rq5" for domain hdonline.vn, path /, expire 0
+< Set-Cookie: PHPSESSID=7t6ir5o7gsul7or45kd8eb7rq5; path=/
 < Expires: Thu, 19 Nov 1981 08:52:00 GMT
 < Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
 < Pragma: no-cache
 * Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
 < Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
 < Server: cloudflare-nginx
-< CF-RAY: 2ad19b63615033fd-HKG
+< CF-RAY: 2b2d2c8d2fb933fd-HKG
 < Content-Encoding: gzip
 < Proxy-Connection: keep-alive
 < 
 * Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
+* Found bundle for host hdonline.vn: 0x7fea9299e310
 * Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
+* Connected to proxy.hcm.fpt.vn (172.30.45.223) port 80 (#0)
 > GET http://hdonline.vn/danh-sach/phim-moi/trang-1.html HTTP/1.1
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
 Host: hdonline.vn
 Accept-Encoding: gzip,deflate,sdch
 Referer: http://hdonline.vn
 Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
+Cookie: PHPSESSID=7t6ir5o7gsul7or45kd8eb7rq5; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
 Accept: application/json, text/javascript, */*; q=0.01
 Cache-Control: max-age=0
 Content-type: application/x-www-form-urlencoded; charset=UTF-8
@@ -53,7 +53,7 @@ X-Requested-With: XMLHttpRequest
 Keep-Alive: 300
 
 < HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 07:59:48 GMT
+< Date: Tue, 14 Jun 2016 10:42:13 GMT
 < Content-Type: text/html
 < Transfer-Encoding: chunked
 < X-Powered-By: PHP/5.3.14
@@ -65,21 +65,21 @@ Keep-Alive: 300
 * Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
 < Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
 < Server: cloudflare-nginx
-< CF-RAY: 2ad19b9836a833fd-HKG
+< CF-RAY: 2b2d2ca3521f33fd-HKG
 < Content-Encoding: gzip
 < Proxy-Connection: keep-alive
 < 
 * Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
+* Found bundle for host hdonline.vn: 0x7fea9299e310
 * Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
-> GET http://hdonline.vn/phim-san-ke-buon-nguoi-mardaani-12417.html HTTP/1.1
+* Connected to proxy.hcm.fpt.vn (172.30.45.223) port 80 (#0)
+> GET http://hdonline.vn/phim-orange-tuong-lai-moi-12459.html HTTP/1.1
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
 Host: hdonline.vn
 Accept-Encoding: gzip,deflate,sdch
 Referer: http://hdonline.vn
 Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
+Cookie: PHPSESSID=7t6ir5o7gsul7or45kd8eb7rq5; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
 Accept: application/json, text/javascript, */*; q=0.01
 Cache-Control: max-age=0
 Content-type: application/x-www-form-urlencoded; charset=UTF-8
@@ -88,7 +88,7 @@ X-Requested-With: XMLHttpRequest
 Keep-Alive: 300
 
 < HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 07:59:51 GMT
+< Date: Tue, 14 Jun 2016 10:42:15 GMT
 < Content-Type: text/html
 < Transfer-Encoding: chunked
 < X-Powered-By: PHP/5.3.14
@@ -100,21 +100,25 @@ Keep-Alive: 300
 * Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
 < Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
 < Server: cloudflare-nginx
-< CF-RAY: 2ad19ba7983233fd-HKG
+< CF-RAY: 2b2d2cab22d133fd-HKG
 < Content-Encoding: gzip
 < Proxy-Connection: keep-alive
 < 
 * Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
+* <url> malformed
+* Closing connection -1
+* <url> malformed
+* Closing connection -1
+* Found bundle for host hdonline.vn: 0x7fea9299e310
 * Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
-> GET http://hdonline.vn/frontend/episode/xmlplay?ep=1&fid=12417&token=NmY1MjVhNDc0YzQ1Njc2YzMzNTg1NDZkNjI1ODRlNDc1NTMyNWE0YjYxNTg2NTRiMzIzMDU0Mzg0NTc5NmY3MjM5NjczZDNk-1464940791&format=json&_x=0.8649589051258331 HTTP/1.1
+* Connected to proxy.hcm.fpt.vn (172.30.45.223) port 80 (#0)
+> GET http://hdonline.vn/phim-flying-witch-puchi-12458.html HTTP/1.1
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
 Host: hdonline.vn
 Accept-Encoding: gzip,deflate,sdch
 Referer: http://hdonline.vn
 Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
+Cookie: PHPSESSID=7t6ir5o7gsul7or45kd8eb7rq5; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
 Accept: application/json, text/javascript, */*; q=0.01
 Cache-Control: max-age=0
 Content-type: application/x-www-form-urlencoded; charset=UTF-8
@@ -123,77 +127,7 @@ X-Requested-With: XMLHttpRequest
 Keep-Alive: 300
 
 < HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 07:59:53 GMT
-< Content-Type: application/javascript; charset=utf-8
-< Transfer-Encoding: chunked
-< X-Powered-By: PHP/5.3.14
-< Expires: Thu, 19 Nov 1981 08:52:00 GMT
-< Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-< Pragma: no-cache
-* Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
-< Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
-< Access-Control-Allow-Origin: *
-< Access-Control-Allow-Methods: GET, POST
-< Server: cloudflare-nginx
-< CF-RAY: 2ad19bb909b333fd-HKG
-< Content-Encoding: gzip
-< Proxy-Connection: keep-alive
-< 
-* Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
-* Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
-> GET http://hdonline.vn/frontend/episode/xmlplay?ep=1&fid=12417&token=NmY1MjVhNDc0YzQ1Njc2YzMzNTg1NDZkNjI1ODRlNDc1NTMyNWE0YjYxNTg2NTRiMzIzMDU0Mzg0NTc5NmY3MjM5NjczZDNk-1464940791&format=json&_x=0.8649589051258331 HTTP/1.1
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
-Host: hdonline.vn
-Accept-Encoding: gzip,deflate,sdch
-Referer: http://hdonline.vn
-Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
-Accept: application/json, text/javascript, */*; q=0.01
-Cache-Control: max-age=0
-Content-type: application/x-www-form-urlencoded; charset=UTF-8
-Connection: keep-alive
-X-Requested-With: XMLHttpRequest
-Keep-Alive: 300
-
-< HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 07:59:54 GMT
-< Content-Type: application/javascript; charset=utf-8
-< Transfer-Encoding: chunked
-< X-Powered-By: PHP/5.3.14
-< Expires: Thu, 19 Nov 1981 08:52:00 GMT
-< Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-< Pragma: no-cache
-* Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
-< Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
-< Access-Control-Allow-Origin: *
-< Access-Control-Allow-Methods: GET, POST
-< Server: cloudflare-nginx
-< CF-RAY: 2ad19bbcfa3133fd-HKG
-< Content-Encoding: gzip
-< Proxy-Connection: keep-alive
-< 
-* Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
-* Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
-> GET http://hdonline.vn/phim-mysteries-of-the-unseen-world-12416.html HTTP/1.1
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
-Host: hdonline.vn
-Accept-Encoding: gzip,deflate,sdch
-Referer: http://hdonline.vn
-Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
-Accept: application/json, text/javascript, */*; q=0.01
-Cache-Control: max-age=0
-Content-type: application/x-www-form-urlencoded; charset=UTF-8
-Connection: keep-alive
-X-Requested-With: XMLHttpRequest
-Keep-Alive: 300
-
-< HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 07:59:55 GMT
+< Date: Tue, 14 Jun 2016 10:42:16 GMT
 < Content-Type: text/html
 < Transfer-Encoding: chunked
 < X-Powered-By: PHP/5.3.14
@@ -205,21 +139,25 @@ Keep-Alive: 300
 * Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
 < Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
 < Server: cloudflare-nginx
-< CF-RAY: 2ad19bbfea7433fd-HKG
+< CF-RAY: 2b2d2cb2138033fd-HKG
 < Content-Encoding: gzip
 < Proxy-Connection: keep-alive
 < 
 * Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
+* <url> malformed
+* Closing connection -1
+* <url> malformed
+* Closing connection -1
+* Found bundle for host hdonline.vn: 0x7fea9299e310
 * Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
-> GET http://hdonline.vn/frontend/episode/xmlplay?ep=1&fid=12416&token=NmY1MjVhNDc0YzQ1NmI2YzMzNTg1NDZkNjI1ODRlNDc1NTMyNWE0YjYxNTg2NTRiMzIzMDU0Mzg0NTc5NmY3MjM4NjczZDNk-1464940795&format=json&_x=0.8649589051258331 HTTP/1.1
+* Connected to proxy.hcm.fpt.vn (172.30.45.223) port 80 (#0)
+> GET http://hdonline.vn/phim-tien-kiem-ky-hiep-5-thuyet-minh-12457.html HTTP/1.1
 User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
 Host: hdonline.vn
 Accept-Encoding: gzip,deflate,sdch
 Referer: http://hdonline.vn
 Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
+Cookie: PHPSESSID=7t6ir5o7gsul7or45kd8eb7rq5; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
 Accept: application/json, text/javascript, */*; q=0.01
 Cache-Control: max-age=0
 Content-type: application/x-www-form-urlencoded; charset=UTF-8
@@ -228,77 +166,7 @@ X-Requested-With: XMLHttpRequest
 Keep-Alive: 300
 
 < HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 07:59:56 GMT
-< Content-Type: application/javascript; charset=utf-8
-< Transfer-Encoding: chunked
-< X-Powered-By: PHP/5.3.14
-< Expires: Thu, 19 Nov 1981 08:52:00 GMT
-< Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-< Pragma: no-cache
-* Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
-< Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
-< Access-Control-Allow-Origin: *
-< Access-Control-Allow-Methods: GET, POST
-< Server: cloudflare-nginx
-< CF-RAY: 2ad19bcbdbab33fd-HKG
-< Content-Encoding: gzip
-< Proxy-Connection: keep-alive
-< 
-* Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
-* Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
-> GET http://hdonline.vn/frontend/episode/xmlplay?ep=1&fid=12416&token=NmY1MjVhNDc0YzQ1NmI2YzMzNTg1NDZkNjI1ODRlNDc1NTMyNWE0YjYxNTg2NTRiMzIzMDU0Mzg0NTc5NmY3MjM4NjczZDNk-1464940795&format=json&_x=0.8649589051258331 HTTP/1.1
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
-Host: hdonline.vn
-Accept-Encoding: gzip,deflate,sdch
-Referer: http://hdonline.vn
-Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
-Accept: application/json, text/javascript, */*; q=0.01
-Cache-Control: max-age=0
-Content-type: application/x-www-form-urlencoded; charset=UTF-8
-Connection: keep-alive
-X-Requested-With: XMLHttpRequest
-Keep-Alive: 300
-
-< HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 07:59:57 GMT
-< Content-Type: application/javascript; charset=utf-8
-< Transfer-Encoding: chunked
-< X-Powered-By: PHP/5.3.14
-< Expires: Thu, 19 Nov 1981 08:52:00 GMT
-< Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-< Pragma: no-cache
-* Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
-< Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
-< Access-Control-Allow-Origin: *
-< Access-Control-Allow-Methods: GET, POST
-< Server: cloudflare-nginx
-< CF-RAY: 2ad19bcfbc2333fd-HKG
-< Content-Encoding: gzip
-< Proxy-Connection: keep-alive
-< 
-* Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
-* Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
-> GET http://hdonline.vn/phim-kapoor-and-sons-12414.html HTTP/1.1
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
-Host: hdonline.vn
-Accept-Encoding: gzip,deflate,sdch
-Referer: http://hdonline.vn
-Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
-Accept: application/json, text/javascript, */*; q=0.01
-Cache-Control: max-age=0
-Content-type: application/x-www-form-urlencoded; charset=UTF-8
-Connection: keep-alive
-X-Requested-With: XMLHttpRequest
-Keep-Alive: 300
-
-< HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 07:59:58 GMT
+< Date: Tue, 14 Jun 2016 10:42:17 GMT
 < Content-Type: text/html
 < Transfer-Encoding: chunked
 < X-Powered-By: PHP/5.3.14
@@ -310,77 +178,7 @@ Keep-Alive: 300
 * Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
 < Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
 < Server: cloudflare-nginx
-< CF-RAY: 2ad19bd2cc7a33fd-HKG
-< Content-Encoding: gzip
-< Proxy-Connection: keep-alive
-< 
-* Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
-* Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
-> GET http://hdonline.vn/frontend/episode/xmlplay?ep=1&fid=12414&token=NmY1MjVhNDc0YzQ1NzM2YzMzNTg1NDZkNjI1ODRlNDc1NTMyNWE0YjYxNTg2NTRiMzIzMDU0Mzg0NTc5NmY3MjJmNzczZDNk-1464940798&format=json&_x=0.8649589051258331 HTTP/1.1
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
-Host: hdonline.vn
-Accept-Encoding: gzip,deflate,sdch
-Referer: http://hdonline.vn
-Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
-Accept: application/json, text/javascript, */*; q=0.01
-Cache-Control: max-age=0
-Content-type: application/x-www-form-urlencoded; charset=UTF-8
-Connection: keep-alive
-X-Requested-With: XMLHttpRequest
-Keep-Alive: 300
-
-< HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 08:00:00 GMT
-< Content-Type: application/javascript; charset=utf-8
-< Transfer-Encoding: chunked
-< X-Powered-By: PHP/5.3.14
-< Expires: Thu, 19 Nov 1981 08:52:00 GMT
-< Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-< Pragma: no-cache
-* Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
-< Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
-< Access-Control-Allow-Origin: *
-< Access-Control-Allow-Methods: GET, POST
-< Server: cloudflare-nginx
-< CF-RAY: 2ad19be32e5f33fd-HKG
-< Content-Encoding: gzip
-< Proxy-Connection: keep-alive
-< 
-* Connection #0 to host proxy.hcm.fpt.vn left intact
-* Found bundle for host hdonline.vn: 0x7fa8a54cadc0
-* Re-using existing connection! (#0) with host proxy.hcm.fpt.vn
-* Connected to proxy.hcm.fpt.vn (172.30.45.224) port 80 (#0)
-> GET http://hdonline.vn/frontend/episode/xmlplay?ep=1&fid=12414&token=NmY1MjVhNDc0YzQ1NzM2YzMzNTg1NDZkNjI1ODRlNDc1NTMyNWE0YjYxNTg2NTRiMzIzMDU0Mzg0NTc5NmY3MjJmNzczZDNk-1464940798&format=json&_x=0.8649589051258331 HTTP/1.1
-User-Agent: Mozilla/5.0 (Macintosh; Intel Mac OS X 10_11_5) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/50.0.2661.102 Safari/537.36
-Host: hdonline.vn
-Accept-Encoding: gzip,deflate,sdch
-Referer: http://hdonline.vn
-Proxy-Connection: Keep-Alive
-Cookie: PHPSESSID=buluidjp770qf817i5hvm6bu43; __cfduid=dd377d9430dfb6e6aed3d2360c24b2c3c1464790322
-Accept: application/json, text/javascript, */*; q=0.01
-Cache-Control: max-age=0
-Content-type: application/x-www-form-urlencoded; charset=UTF-8
-Connection: keep-alive
-X-Requested-With: XMLHttpRequest
-Keep-Alive: 300
-
-< HTTP/1.1 200 OK
-< Date: Fri, 03 Jun 2016 08:00:01 GMT
-< Content-Type: application/javascript; charset=utf-8
-< Transfer-Encoding: chunked
-< X-Powered-By: PHP/5.3.14
-< Expires: Thu, 19 Nov 1981 08:52:00 GMT
-< Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
-< Pragma: no-cache
-* Added cookie checkUser="deleted" for domain hdonline.vn, path /, expire 1
-< Set-Cookie: checkUser=deleted; expires=Thu, 01-Jan-1970 00:00:01 GMT; path=/; domain=.hdonline.vn
-< Access-Control-Allow-Origin: *
-< Access-Control-Allow-Methods: GET, POST
-< Server: cloudflare-nginx
-< CF-RAY: 2ad19be5feb933fd-HKG
+< CF-RAY: 2b2d2cb9044e33fd-HKG
 < Content-Encoding: gzip
 < Proxy-Connection: keep-alive
 < 
