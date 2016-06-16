@@ -46,36 +46,29 @@ cursor.execute(sql)
 results = cursor.fetchall()
 
 # check load url of img from database
-for item in feed['entries']:
+for item in results:
     try:
-        img_path_ffmpeg = '%s/%s' % (img_path_edit, img.split('/')[-1])
+        img = item[0]
+        filename = img.split('/')[-1]
+        temp_path = '%s/%s' % (img_path, filename)
+        img_path_ffmpeg = '%s/%s' % (img_path_edit, filename)
+
         # download img from website and save as temp_path
         urllib.urlretrieve(img, temp_path)
         img_normalize(temp_path, img_path_ffmpeg)
-        title = item.title
+        title = filename
+
         # upload img to facebook
         photo = graph.put_photo(image=open(temp_path, 'rb'),  message=title, album_path='238338113211606/photos')
         photoid = '%s?fields=images' % photo['id']
         img_temp = graph.get_object(id=photoid)
+
+        # insert link of image into database
         for i in img_temp['images']:
             source, width, height = i.items()
-            photo_sql = 'insert into fb_photo_id(fb_id, height, width, link) values ("%s", %d, %d, "%s")' % (photo['id'], height[-1], width[-1], source[-1])
+            photo_sql = 'insert into images(fb_id, link, film_id) values ("%s", "%s", %d)' % (photo['id'], source[-1], item[-1])
             cursor.execute(photo_sql)
             db.commit()
-            if  height[-1] == 130:
-                img_link = source[-1]
-                print img_link
-            if  height[-1] > 400:
-                img_big = source[-1]
-                print img_big
-        link = item.link
-        summary = item.summary.split('</a>')[-1]
-        pub = item.published
-        sql = "insert into alobao(link, image, title, content, pub, image_big, create_at) values ('%s', '%s', '%s', '%s', '%s', '%s', '%s')" % (link, img_link, title, summary, pub, img_big, str(datetime.now()))
-        #print sql
-        cursor.execute(sql)
-        db.commit()
     except Exception as e:
         print link
-        print str(e)
         pass
