@@ -17,6 +17,7 @@ class CreateFilmsTable extends Migration
             $table->string('title_viet')->nullable();
             $table->string('title_english')->nullable();
             $table->text('description')->nullable();
+            $table->string('thumbnail_id')->nullable();
             $table->string('play_time')->nullable();
             $table->integer('year')->nullable();
             $table->string('country')->nullable();
