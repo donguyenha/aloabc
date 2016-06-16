@@ -41,19 +41,13 @@ def img_normalize(temp_path, img_path_ffmpeg):
     process.wait()
     return True
 
+sql = "select thumbnail_id, id from films where status=1"
+cursor.execute(sql)
+results = cursor.fetchall()
+
 # check load url of img from database
 for item in feed['entries']:
     try:
-        try:
-            img = pattern_jpg.search(item.summary).group().split('=')[1]
-        except:
-            img = pattern_png.search(item.summary).group().split('=')[1]
-        img = re.sub('"', '', img)
-        img = re.sub('/s146/', '/s626/', img)
-        temp_path = '%s/%s' % (img_path, img.split('/')[-1])
-        if os.path.exists(temp_path):
-            print 'file exists == %s' % temp_path
-            break
         img_path_ffmpeg = '%s/%s' % (img_path_edit, img.split('/')[-1])
         # download img from website and save as temp_path
         urllib.urlretrieve(img, temp_path)
