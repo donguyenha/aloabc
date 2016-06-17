@@ -32,6 +32,10 @@ for url in results:
     title_english = soup.find('div', {'class': 'name2 fr'}).text.strip()
     InsertLink(cursor, connect, "title_english", title_english, int(url[1]))
 
+    year = title_english.split()[-2]
+    InsertLink(cursor, connect, "year", year, int(url[1]))
+
+
     description = soup.find('div', {'class': 'detail-content-main'}).text.strip()
     InsertLink(cursor, connect, "description", description, int(url[1]))
 
