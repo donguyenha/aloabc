@@ -8,12 +8,13 @@ import urllib
 import facebook
 import imageio
 import os
+import requests
 
-db = MySQLdb.connect("localhost", "root", "", "yii", use_unicode=True, charset="utf8")
+db = MySQLdb.connect("localhost", "root", "abc@123", "aloabc", use_unicode=True, charset="utf8")
 cursor = db.cursor()
 
-img_path = '/home/hadn/Downloads'
-img_path_edit = '/home/hadn/Downloads/scripts'
+img_path = '/home/hadn/Downloads/phim.media'
+img_path_edit = '/home/hadn/Downloads/aloabc'
 fb_token_key = 'EAAYWrk8vdiEBAAa2mohGS1lkaucidjQpyVc1ML54diwg26dT7bRRLNV1FXl5absSo0xKdZA7AjYUi1uE8yRSDdXKJHiSpOZCfvsTabT7EZA9mpTp4csiMtyycCKQM7RRmabIDpbI5l5oYDEOS8RnzSz4IgvkXMZD'
 graph = facebook.GraphAPI(access_token=fb_token_key)
 
@@ -48,13 +49,19 @@ results = cursor.fetchall()
 # check load url of img from database
 for item in results:
     try:
-        img = item[0]
+        img = item[0].replace('/temp/', '/')
         filename = img.split('/')[-1]
         temp_path = '%s/%s' % (img_path, filename)
         img_path_ffmpeg = '%s/%s' % (img_path_edit, filename)
 
         # download img from website and save as temp_path
-        urllib.urlretrieve(img, temp_path)
+        with open(temp_path, 'wb') as handle:
+            response = requests.get(img, stream=True)
+            if not response.ok:
+                print "error"
+            for block in response.iter_content(1024):
+                handle.write(block)
+        #urllib.urlretrieve(img, temp_path)
         img_normalize(temp_path, img_path_ffmpeg)
         title = filename
 
@@ -62,13 +69,14 @@ for item in results:
         photo = graph.put_photo(image=open(temp_path, 'rb'),  message=title, album_path='238338113211606/photos')
         photoid = '%s?fields=images' % photo['id']
         img_temp = graph.get_object(id=photoid)
+        print img_temp
 
         # insert link of image into database
         for i in img_temp['images']:
             source, width, height = i.items()
-            photo_sql = 'insert into images(fb_id, link, film_id) values ("%s", "%s", %d)' % (photo['id'], source[-1], item[-1])
+            photo_sql = 'insert into images(fb_id, link, film_id) values ("%s", "%s", %d)' % (photo['id'], source[-1], int(item[-1]))
             cursor.execute(photo_sql)
             db.commit()
     except Exception as e:
-        print link
+        print str(e)
         pass
