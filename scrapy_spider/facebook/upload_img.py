@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+# https://lh3.googleusercontent.com/5GS7kUWyDxHR0TgY3PdtV3sAiG9KSzxmyTrniXM03dF-rkDf2uuO-1o_j6412LuImW76-ZedyyM=m22?itag=22&type=video/mp4
 from __future__ import division
 import MySQLdb
 from datetime import datetime
@@ -54,6 +55,7 @@ for item in results:
         temp_path = '%s/%s' % (img_path, filename)
         img_path_ffmpeg = '%s/%s' % (img_path_edit, filename)
 
+        print item[0]
         # download img from website and save as temp_path
         with open(temp_path, 'wb') as handle:
             response = requests.get(img, stream=True)
