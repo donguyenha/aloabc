@@ -1,0 +1,2 @@
+http://dev.mysql.com/doc/connector-python/en/
+should change to use MySQL connection
