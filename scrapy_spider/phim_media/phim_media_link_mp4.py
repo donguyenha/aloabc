@@ -18,7 +18,7 @@ def InsertLink(cursor, connect, col, value):
     except:
         pass
 
-def link(url)
+def LinkMP4(url):
     # should check the link_film.txt for structure
     # return sd/hd link of film
     data = requests.get(url)
@@ -31,9 +31,9 @@ def link(url)
         if 'googleusercontent' in i.get('src'):
             temp_mp4.update({i.get('data-res') : i.get('src')})
     try:
-        return temp_mp4['HD']
+        return {'HD' : temp_mp4['HD']}
     except:
-        return temp_mp4['SD']
+        return {'SD': temp_mp4['SD']}
 
 def Info(Tag):
     # should check the info_link_img_film.txt for structure
@@ -49,25 +49,15 @@ cursor = connect.cursor()
 sql = "select crawler_at, id from films where status=1"
 cursor.execute(sql)
 results = cursor.fetchall()
+count = 1
 for url in results:
     soup = GetContent(url[0])
-    title_viet = soup.find('h2', {'class': 'title fr'}).text
-    InsertLink(cursor, connect, "title_viet", title_viet, int(url[1]))
-
-    title_english = soup.find('div', {'class': 'name2 fr'}).text
-    InsertLink(cursor, connect, "title_english", title_english, int(url[1]))
-
-    description = soup.find('div', {'class': 'detail-content-main'}).text
-    InsertLink(cursor, connect, "description", description, int(url[1]))
-
-    # http://www.phim.media/upload/images/phim/phim/diablo-2015.jpg - big images
-    # http://www.phim.media/temp/upload/images/phim/phim/diablo-2015.jpg
-    thumbnail_id = link(soup.find('div', {'class':'poster'}).img.get('src'))
-    InsertLink(cursor, connect, "thumbnail_id", thumbnail_id, int(url[1]))
-
-    infos = soup.findAll('dd')
-    country = infos[0].text.strip()
-    InsertLink(cursor, connect, "country", country, int(url[1]))
-
-    play_time = infos[1].text.strip()
-    InsertLink(cursor, connect, "play_time", play_time, int(url[1]))
+    try:
+        link = soup.find('a', {'class': 'btn-watch'}).get('href')
+        print link
+        print LinkMP4(link)
+        count += 1
+        if count > 100:
+            break
+    except:
+        print url[0] + " \t\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
