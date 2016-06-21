@@ -35,29 +35,31 @@ def LinkMP4(url):
     except:
         return {'SD': temp_mp4['SD']}
 
-def Info(Tag):
-    # should check the info_link_img_film.txt for structure
-    # link get info http://www.phim.media/phim-vien-tay-dam-mau/
-    # link autoplay http://www.phim.media/phim-vien-tay-dam-mau/xem-online.html
-    img = Tag.img.get('src')
-    info = Tag.a.get('href')
-    return {}
-
 connect = MySQLdb.connect('localhost', 'root', 'abc@123', 'aloabc', use_unicode=True, charset="utf8");
 cursor = connect.cursor()
 
 sql = "select crawler_at, id from films where status=1"
 cursor.execute(sql)
 results = cursor.fetchall()
-count = 1
+
+temp_path = '/mnt/phim.media'
+
 for url in results:
+    print url[0]
     soup = GetContent(url[0])
     try:
         link = soup.find('a', {'class': 'btn-watch'}).get('href')
         print link
-        print LinkMP4(link)
-        count += 1
-        if count > 100:
-            break
-    except:
+        type_of_film, link = LinkMP4(link).items()[0]
+        filename = '%s/%s-%s.mp4' % (temp_path, type_of_film, url[0].split('/')[-2])
+        print filename
+        with open(filename, 'wb') as handle:
+            response = requests.get(link, stream=True)
+            if not response.ok:
+                print error
+            for block in response.iter_content(1024):
+                handle.write(block)
+        #break
+    except Exception as e:
+        print str(e)
         print url[0] + " \t\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\"
